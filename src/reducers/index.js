@@ -54,13 +54,14 @@ const reducer = (state = initialState, action) => {
         ...state,
         smurfs: [
           ...state.smurfs,
-          {
-            id: action.payload.id,
-            name: action.payload.name,
-            position: action.payload.position,
-            nickname: action.payload.nickname,
-            description: action.payload.description,
-          },
+          action.payload,
+          //   {
+          //     id: action.payload.id,
+          //     name: action.payload.name,
+          //     position: action.payload.position,
+          //     nickname: action.payload.nickname,
+          //     description: action.payload.description,
+          //   },
         ],
       };
     case MODIFY_ERR_MSG:

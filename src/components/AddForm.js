@@ -17,11 +17,12 @@ const AddForm = (props) => {
       ...state,
       [e.target.name]: e.target.value,
     });
+    console.log("state", state);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addSmurf(state.name, state.position, state.nickname, state.description);
+    props.addSmurf({ name: state.name, position: state.position, nickname: state.nickname, description: state.description });
     if (state.name === "" || state.position === "" || state.nickname === "") {
       error = modifyErrMsg();
       console.log("handlesubmit err", error);
